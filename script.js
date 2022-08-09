@@ -12,9 +12,17 @@ function WhereMouse(evt) {
     Mouse_Y += scroll_y;
     console.log(Mouse_X,Mouse_Y);
     let b = document.getElementById("int")
-    b.style.top = Mouse_Y
-    b.style.left = Mouse_X
+    
+    let x = Mouse_X - 80
+    let y = Mouse_Y - 80
+    b.style.opacity = 1
+    b.style.top = y+"px"
+    b.style.left = x+"px"
 
 }
 typeof window.addEventListener == 'undefined' ? document.attachEvent("onmousemove", WhereMouse) : document.addEventListener('mousemove', WhereMouse, false);
 
+document.addEventListener("mouseover",()=>{
+    let b = document.getElementById("int")
+    b.style.opacity = 0
+})
